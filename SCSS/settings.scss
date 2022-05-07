@@ -1,0 +1,9 @@
+$MainColor: #ffe66d;
+$AdditionalColor: #323332;
+$AdditionalColorShade1: #7da7e5;
+
+@mixin center-elements {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

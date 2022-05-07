@@ -1,0 +1,189 @@
+@use "settings.scss" as *;
+
+html {
+  /* 1rem = 10px */
+  font-size: 62.5%;
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  background-color: $MainColor;
+  min-height: 100vh;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-bottom: 4rem;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  font-size: 5rem;
+  font-weight: 500;
+  text-align: center;
+  color: $AdditionalColor;
+
+  .avatar {
+    width: 14rem;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+
+  :hover {
+    opacity: 75%;
+  }
+
+  img:hover {
+    opacity: 100%;
+  }
+}
+
+.apps--section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  gap: 1rem;
+}
+
+.spoiler {
+  @include center-elements;
+  gap: 1rem;
+}
+
+.app--link {
+  width: fit-content;
+}
+
+.button--container {
+  border-radius: 10rem;
+  padding: 1rem;
+  @include center-elements;
+  justify-content: space-around;
+  color: #fff;
+  font-size: 4rem;
+  gap: 1rem;
+  text-align: center;
+  img {
+    width: 7rem;
+  }
+}
+
+.logo {
+  width: 4rem;
+  border-radius: 50%;
+}
+.github {
+  background-color: black;
+}
+
+.www {
+  background-color: #fff;
+  color: #0183c9;
+}
+
+.last--spoiler {
+  flex-direction: column;
+}
+
+footer {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: black;
+  font-size: 1.5rem;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+  font-family: inherit;
+
+  .phones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      margin: 0.5rem;
+    }
+  }
+
+  img {
+    width: 3rem;
+  }
+}
+
+// Spoiler implementation
+input[id^="spoiler"] {
+  display: none;
+}
+input[id^="spoiler"] + label {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+
+  background: $AdditionalColor;
+  color: #fff;
+  text-align: center;
+  font-size: 4.4rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.6s;
+}
+input[id^="spoiler"]:checked + label {
+  opacity: 75%;
+  margin-bottom: 0.5rem;
+}
+input[id^="spoiler"] ~ .spoiler {
+  width: 90%;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+
+  background: $MainColor;
+
+  border-radius: 0.8rem;
+  transition: all 0.6s;
+}
+input[id^="spoiler"]:checked + label + .spoiler {
+  height: auto;
+  opacity: 1;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 955px) {
+  html {
+    font-size: 55%;
+  }
+}
+@media screen and (max-width: 647px) {
+  html {
+    font-size: 45%;
+  }
+}
+@media screen and (max-width: 515px) {
+  html {
+    font-size: 35%;
+  }
+}
