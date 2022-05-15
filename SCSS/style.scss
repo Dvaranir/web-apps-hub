@@ -113,7 +113,7 @@ footer {
   color: #fff;
   font-family: inherit;
 
-  .phones {
+  .contacts {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -185,5 +185,11 @@ input[id^="spoiler"]:checked + label + .spoiler {
 @media screen and (max-width: 515px) {
   html {
     font-size: 35%;
+  }
+  body {
+    padding-bottom: 26rem;
+  }
+  .contacts {
+    flex-direction: column;
   }
 }
